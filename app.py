@@ -1,6 +1,6 @@
 import streamlit as st
 from langchain.prompts import PromptTemplate
-from langchain.llms import CTransformers
+from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 import os
 ## Function To get response from LLAma 2 model
