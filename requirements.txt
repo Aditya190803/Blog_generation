@@ -4,4 +4,4 @@ python-box
 streamlit
 langchain-groq
 langchain_community
-dotenv
+python-dotenv
