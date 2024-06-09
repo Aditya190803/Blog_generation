@@ -1,5 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
+import os
 
 # Configure the API key
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
@@ -22,7 +23,7 @@ def generate_content(topics, content_length):
     return generated_content
 
 def main():
-    st.title('Gemini Blog Assistant')
+    st.title('Blog Writer')
 
     topics = st.text_input('Enter a topic:')
     content_length = st.number_input('Enter the content length (words):', min_value=1)
@@ -34,6 +35,15 @@ def main():
             generated_content = generate_content(topics, content_length)
             st.subheader('Generated Content:')
             st.markdown(generated_content, unsafe_allow_html=True)  # Display the generated content as markdown
+            
+            # Convert generated content to markdown and offer download
+            markdown_content = f"# {topics}\n\n{generated_content}"
+            st.download_button(
+                label="Download Markdown",
+                data=markdown_content,
+                file_name="generated_blog.md",
+                mime="text/markdown"
+            )
 
 if __name__ == '__main__':
     main()
