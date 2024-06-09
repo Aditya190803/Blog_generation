@@ -5,9 +5,15 @@ import os
 # Configure the API key
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
+# Cache the generative model initialization
+@st.cache_resource
+def get_model():
+    return genai.GenerativeModel('gemini-1.5-pro')
+
+# Cache the generated content based on the input parameters
+@st.cache_data
 def generate_content(topics, content_length):
-    # Generate content using the Gemini LLM API
-    model = genai.GenerativeModel('gemini-1.5-pro')
+    model = get_model()
     prompt = f"Generate content related to {topics} with a length of {content_length} words in English."
     
     try:
