@@ -5,3 +5,4 @@ streamlit
 langchain-groq
 langchain_community
 python-dotenv
+google-generativeai
