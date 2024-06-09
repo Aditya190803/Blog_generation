@@ -1,6 +1,6 @@
-# Gemini Blog Assistant
+# Blog Writer
 
-Gemini Blog Assistant is a Streamlit-based web application that generates content using the Gemini LLM API by Google Generative AI. Users can input a topic and specify the content length to generate relevant content in English.
+Blog Writer is a Streamlit-based web application that generates blog using the Gemini LLM API. Users can input a topic and specify the content length to generate relevant content in English.
 
 ## Features
 
@@ -17,8 +17,8 @@ Gemini Blog Assistant is a Streamlit-based web application that generates conten
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/your-username/gemini-blog-assistant.git
-    cd gemini-blog-assistant
+    git clone https://github.com/aditya190803/blog-generation.git
+    cd blog-generation
     ```
 
 2. **Create and activate a virtual environment** (optional but recommended):
